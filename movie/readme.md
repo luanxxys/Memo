@@ -1,4 +1,5 @@
 ### Movie
+> What is gone is gone, but go for what to come
 
 title|director|time|remark
 ---|---|---|---
