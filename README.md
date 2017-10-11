@@ -2,4 +2,4 @@
 
 ## Introduce
 
-The repository is mainly to record my some temp ideas
+Words are poor(just because too lazy to say what is here :relieved:)
