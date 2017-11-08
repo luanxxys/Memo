@@ -16,9 +16,8 @@
 
 - ### 回顾
 
-    + [神经网络基础](https://github.com/luanxxys/computer-science/tree/master/Machine%20Learning)
-
     + [BP 神经网络](https://github.com/luanxxys/computer-science/tree/master/Machine%20Learning/BP-NN)
 
     + [统计学习方法](https://github.com/luanxxys/computer-science/tree/master/Machine%20Learning/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B)
 
+    + [神经网络基础](https://github.com/luanxxys/computer-science/tree/master/Machine%20Learning)
