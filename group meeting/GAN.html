@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>GAN</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="generative-adversarial-networks" class="title-slide slide level3"><h3>Generative Adversarial Networks</h3></section><section class="slide level6">
+
+</section></section>
+<section><section id="what-can-gan-do" class="title-slide slide level3"><h3>What can GAN do ?</h3></section><section class="slide level6">
+
+<p><img src="./images/脸萌.PNG" width="75%" height="75%"/></p>
+<blockquote>
+<p>Taigman et al., 2017</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p><img data-src="./images/sunglass.PNG" /></p>
+<blockquote>
+<p>Alec Radford et al. 2015</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p><img src="./images/forcesmile.jpg" width="55%" height="55%"/></p>
+</section><section class="slide level6">
+
+<p><img src="./images/trump.PNG" width="75%" height="75%"/></p>
+<blockquote>
+<p>genekogan@Twitter</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p><img src="./images/faceturn.jpg" width="45%" height="45%"/></p>
+<blockquote>
+<p>R. Huang et al. 2017</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p><img src="./images/sky.png" width="73%" height="73%"/></p>
+<blockquote>
+<p>Jun-Yan Zhu et al. 2016</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p><img data-src="./images/horse.PNG" /></p>
+<blockquote>
+<p>https://junyanz.github.io/CycleGAN/</p>
+</blockquote>
+</section><section class="slide level6">
+
+</section></section>
+<section><section id="what-is-gan" class="title-slide slide level3"><h3>What is GAN ?</h3></section><section class="slide level6">
+
+<p><img data-src="./images/police.PNG" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/system.PNG" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/autocoder_1.PNG" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/generator.PNG" /></p>
+</section><section class="slide level6">
+
+<p>Generator Model</p>
+<ul>
+<li><p>Deep Belief Network (DBN)</p></li>
+<li><p>Stacked Auto-Encoder (SAE)</p></li>
+<li><p>Deep Boltzman Machine (DBM)</p></li>
+<li><p>Variational Auto-Encoder (VAE)</p></li>
+</ul>
+</section><section class="slide level6">
+
+<p><img data-src="./images/discriminator.PNG" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/evaluation.PNG" /></p>
+</section><section class="slide level6">
+
+<p>Demo - Generate cartoon faces</p>
+<figure>
+<img data-src="./images/100rounds.PNG" alt="100 rounds" /><figcaption>100 rounds</figcaption>
+</figure>
+</section><section class="slide level6">
+
+<figure>
+<img data-src="./images/1000rounds.PNG" alt="1,000 rounds" /><figcaption>1,000 rounds</figcaption>
+</figure>
+</section><section class="slide level6">
+
+<figure>
+<img data-src="./images/5000rounds.PNG" alt="5,000 rounds" /><figcaption>5,000 rounds</figcaption>
+</figure>
+</section><section class="slide level6">
+
+<figure>
+<img data-src="./images/50000rounds.PNG" alt="50,000 rounds" /><figcaption>50,000 rounds</figcaption>
+</figure>
+<blockquote>
+<p><a href="https://github.com/carpedm20/DCGAN-tensorflow">DCGAN</a></p>
+</blockquote>
+</section><section class="slide level6">
+
+</section></section>
+<section><section id="theory-algorithm" class="title-slide slide level3"><h3>Theory &amp; Algorithm</h3></section><section class="slide level6">
+
+<p><img data-src="./images/mle_1.png" /></p>
+</section><section class="slide level6">
+
+<p>The optimization process is a Minimax game problem, and the optimization goal is to achieve the Nash equilibrium</p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/mle_2.png" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/nnframe.png" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/minmax_expression.png" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/algorithm.png" /></p>
+</section><section class="slide level6">
+
+<p><a href="https://sherlockliao.github.io/2017/06/20/gan_math/">GAN Math</a></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/trainprocessing.png" /></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/solution.png" /></p>
+</section><section class="slide level6">
+
+</section></section>
+<section><section id="pros-and-cons" class="title-slide slide level3"><h3>PROs and CONs</h3></section><section class="slide level6">
+
+<p>PROs</p>
+<ul>
+<li><p>Markov chains are never needed</p>
+<pre><code>  only backprop is used to obtain gradients</code></pre></li>
+<li><p>No inference is needed during learning</p></li>
+<li><p>A wide variety of functions can be incorporated into the model</p></li>
+<li><p>GAN can be combined with CNN and RNN</p></li>
+</ul>
+</section><section class="slide level6">
+
+<p>CONs</p>
+<ul>
+<li><p>There is no explicit representation of Pg(x)</p></li>
+<li><p>D must be synchronized well with G during training</p></li>
+</ul>
+</section><section class="slide level6">
+
+</section></section>
+<section><section id="head-first-generative-adversarial-networks" class="title-slide slide level3"><h3><a href="./HeadFirstGAN_theory.pdf">Head First Generative Adversarial Networks</a></h3></section><section class="slide level6">
+
+</section></section>
+<section><section id="there-are-more-that-gan-can-do" class="title-slide slide level3"><h3>There are more that GAN can do …</h3></section><section class="slide level6">
+
+<p><a href="http://papers.nips.cc/paper/5423-generative-adversarial-nets">Generative Adversarial Nets</a></p>
+<blockquote>
+<p>Ian Goodfellow et al., 2014</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p><img data-src="./images/paper.PNG" /></p>
+<blockquote>
+<p>github.com/hindupuravinash/the-gan-zoo as at June 10, 2017</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p>Kinds of GANs</p>
+<p><img data-src="./images/GANs.png" /></p>
+</section><section class="slide level6">
+
+<p><a href="https://github.com/dongb5/GAN-Timeline">GAN Timeline</a></p>
+</section><section class="slide level6">
+
+<p><img data-src="./images/turtle.jpg" /></p>
+</section><section class="slide level6">
+
+<p>Text to Image</p>
+<p><img data-src="./images/texttoimage.PNG" /></p>
+<blockquote>
+<p>H. Zhang et al. 2016 (StackGAN)</p>
+</blockquote>
+</section><section class="slide level6">
+
+<p>Image to Image</p>
+<p><img data-src="./images/bagcolor.jpg" /></p>
+</section><section class="slide level6">
+
+<p>Single Image Super-Resolution</p>
+<p><img data-src="./images/super.PNG" /></p>
+<blockquote>
+<p>Christian Ledig et al. 2016</p>
+</blockquote>
+</section><section class="slide level6">
+
+</section></section>
+<section><section id="future-research-on-gans" class="title-slide slide level3"><h3>Future Research on GANs</h3></section><section class="slide level6">
+
+<p><img data-src="./images/future.PNG" /></p>
+</section><section class="slide level6">
+
+</section></section>
+<section><section id="gan-on-speech-processing" class="title-slide slide level3"><h3>GAN on Speech Processing</h3></section><section class="slide level6">
+
+<p><a href="https://arxiv.org/abs/1711.01567">Robust Speech Recognition Using Generative Adversarial Networks</a></p>
+</section><section class="slide level6">
+
+<p><a href="https://arxiv.org/pdf/1703.09452.pdf">SEGAN: Speech Enhancement Generative Adversarial Network</a></p>
+</section><section class="slide level6">
+
+<ul>
+<li><p><a href="https://arxiv.org/abs/1711.05747">Exploring Speech Enhancement with Generative Adversarial Networks for Robust Speech Recognition</a></p></li>
+<li><p><a href="http://kom.aau.dk/~zt/doc/Michelsanti-Tan-cGAN-Interspeech2017.pdf">Conditional Generative Adversarial Networks for Speech Enhancement and Noise-Robust Speaker Verification</a></p></li>
+<li><p><a href="https://arxiv.org/abs/1707.01670">Statistical Parametric Speech Synthesis Using Generative Adversarial Networks Under A Multi-task Learning Framework</a></p></li>
+<li><p><a href="https://arxiv.org/abs/1709.08041">Statistical Parametric Speech Synthesis Incorporating Generative Adversarial Networks</a></p></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
