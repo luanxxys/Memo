@@ -3,7 +3,7 @@
 
 ## Reference
 
-- #### [Zuckerberg slide](how_do_i_keep_high_efficiency-zuckerberg.pdf)
+- #### [Zuckerberg's slide](how_do_i_keep_high_efficiency-zuckerberg.pdf)
 
 - #### [Chinese version](work_efficiently.pdf)
 
