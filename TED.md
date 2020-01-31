@@ -1,6 +1,6 @@
 # TED
 
-偶有感触的 TED 视频,本想记录下来,但现在给懒的,没工夫看了.
+偶有感触的 TED 视频，本想记录下来，但现在给懒的，没工夫看了。
 
 - ### There's more to life than being happy
     > by EMILY ESFAHANI SMITH. TED
